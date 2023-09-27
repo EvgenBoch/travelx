@@ -1,0 +1,35 @@
+.socials {
+    display: flex;
+    flex-direction: column;
+    row-gap: 28px;
+    align-items: center;
+
+    & a {
+        transition: opacity .2s ease-in;
+
+        position: relative;
+
+        &:hover {
+            opacity: 0.5;
+        }
+
+        &::before {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 1px;
+            background-color: #fff;
+            bottom: -4px;
+            left: 0;
+            transform-origin: right;
+            transform: scaleX(0);
+            transition: transform .3s ease-in-out;
+        }
+    
+        &:hover::before {
+            transform-origin: left;
+            transform: scaleX(1);
+        }
+    }
+
+}
